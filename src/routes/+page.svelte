@@ -127,9 +127,16 @@
                 <div class="group">
                   <div class="flex items-center justify-between">
                     <h3
-                      class="text-xl font-bold text-white transition-colors group-hover:text-blue-400"
+                      class="text-xl font-bold text-white transition-colors hover:text-blue-400"
                     >
-                      {airdrop.name}
+                      <a
+                        href={airdrop.projectLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-blue-400"
+                      >
+                        {airdrop.name}
+                      </a>
                     </h3>
                     <a href={airdrop.source} target="_blank" rel="noopener noreferrer">
                       <Badge variant={airdrop.isConfirmed ? 'default' : 'outline'}>
