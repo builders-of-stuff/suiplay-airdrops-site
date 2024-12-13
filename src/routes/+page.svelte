@@ -1,9 +1,10 @@
 <script lang="ts">
+  import Fuse from 'fuse.js';
+
   import { Badge } from '$lib/components/ui/badge';
   import { Card } from '$lib/components/ui/card';
   import { Input } from '$lib/components/ui/input';
   import * as Select from '$lib/components/ui/select/index.js';
-  import { Button } from '$lib/components/ui/button';
 
   // Define the Airdrop type
   type Airdrop = {
@@ -49,30 +50,74 @@
         return 'default';
     }
   }
+
+  // Add reactive variables for search and filter
+  let searchQuery = $state('');
+  let statusFilter = $state('all');
+
+  // Configure Fuse.js
+  const fuseOptions = {
+    keys: ['projectName', 'tokenSymbol'],
+    threshold: 0.4,
+    ignoreLocation: true
+  };
+
+  const fuse = new Fuse(airdrops, fuseOptions);
+
+  // Use derived state for filtered airdrops
+  let filteredAirdrops = $derived.by(() => {
+    let results = [...airdrops];
+
+    // Apply status filter
+    if (statusFilter !== 'all') {
+      results = results.filter((airdrop) => airdrop.status === statusFilter);
+    }
+
+    // Apply search if query exists
+    if (searchQuery.trim()) {
+      results = fuse.search(searchQuery).map((result) => result.item);
+    }
+
+    return results;
+  });
+
+  // Handle status filter change
+  function handleStatusChange(value: string) {
+    statusFilter = value;
+  }
 </script>
 
-<header class="bg-gradient-to-r from-purple-600 to-blue-500 text-white">
+<!-- header -->
+<header class="text-white">
   <div class="container mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold">SuiPlay Airdrop Tracker</h1>
+    <h1 class="text-4xl font-bold">SuiPlay0X1 Airdrop Tracker</h1>
     <p class="mt-4">From Legacy to the Sui Community</p>
     <div class="stats mt-8">
-      <div class="grid grid-cols-3 gap-4">
-        <div>
-          <p class="text-2xl font-bold">{airdrops.length}</p>
-          <p class="text-sm">Total Airdrops</p>
-        </div>
-        <div>
-          <p class="text-2xl font-bold">
-            {airdrops.filter((a) => a.status === 'confirmed').length}
-          </p>
-          <p class="text-sm">Confirmed</p>
-        </div>
-        <div>
-          <p class="text-2xl font-bold">
-            {airdrops.filter((a) => a.communityVerified).length}
-          </p>
-          <p class="text-sm">Verified</p>
-        </div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <Card>
+          <div class="p-4 text-center">
+            <p class="text-sm font-medium text-muted-foreground">Total Airdrops</p>
+            <p class="mt-2 text-3xl font-bold">{filteredAirdrops.length}</p>
+          </div>
+        </Card>
+
+        <Card>
+          <div class="p-4 text-center">
+            <p class="text-sm font-medium text-muted-foreground">Confirmed</p>
+            <p class="mt-2 text-3xl font-bold">
+              {filteredAirdrops.filter((a) => a.status === 'confirmed').length}
+            </p>
+          </div>
+        </Card>
+
+        <Card>
+          <div class="p-4 text-center">
+            <p class="text-sm font-medium text-muted-foreground">Verified</p>
+            <p class="mt-2 text-3xl font-bold">
+              {filteredAirdrops.filter((a) => a.communityVerified).length}
+            </p>
+          </div>
+        </Card>
       </div>
     </div>
   </div>
@@ -81,7 +126,7 @@
 <main class="container mx-auto py-8">
   <!-- Filters -->
   <div class="mb-8 flex gap-4">
-    <Select.Root type="single">
+    <Select.Root type="single" value={statusFilter} onValueChange={handleStatusChange}>
       <Select.Trigger class="w-[180px]">
         <!-- <Select.Value placeholder="Filter by status" /> -->
       </Select.Trigger>
@@ -93,11 +138,17 @@
       </Select.Content>
     </Select.Root>
 
-    <Input type="search" placeholder="Search projects..." class="w-[250px]" />
+    <Input
+      type="search"
+      placeholder="Search projects..."
+      class="w-[250px]"
+      bind:value={searchQuery}
+    />
   </div>
 
+  <!-- airdrops -->
   <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {#each airdrops as airdrop}
+    {#each filteredAirdrops as airdrop}
       <Card>
         <div class="p-6">
           <div class="flex items-center justify-between">
@@ -137,48 +188,3 @@
     {/each}
   </div>
 </main>
-
-<section class="bg-gray-50 py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="mb-6 text-2xl font-bold">Help Grow The List</h2>
-
-    <Card>
-      <form class="space-y-4 p-6">
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div class="space-y-2">
-            <label for="projectName" class="text-sm font-medium">Project Name</label>
-            <Input id="projectName" placeholder="Enter project name" />
-          </div>
-
-          <div class="space-y-2">
-            <label for="tokenSymbol" class="text-sm font-medium">Token Symbol</label>
-            <Input id="tokenSymbol" placeholder="Enter token symbol" />
-          </div>
-
-          <div class="space-y-2">
-            <label for="status" class="text-sm font-medium">Status</label>
-            <Select.Root type="single">
-              <Select.Trigger>
-                <!-- <Select.Value placeholder="Select status" /> -->
-              </Select.Trigger>
-              <Select.Content>
-                <Select.Item value="confirmed">Confirmed</Select.Item>
-                <Select.Item value="rumored">Rumored</Select.Item>
-                <Select.Item value="completed">Completed</Select.Item>
-              </Select.Content>
-            </Select.Root>
-          </div>
-
-          <div class="space-y-2">
-            <label for="sourceLink" class="text-sm font-medium">Source Link</label>
-            <Input id="sourceLink" placeholder="Enter source URL" />
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <Button type="submit" class="w-full">Submit New Airdrop</Button>
-        </div>
-      </form>
-    </Card>
-  </div>
-</section>
