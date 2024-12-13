@@ -1,5 +1,6 @@
 <script lang="ts">
   import Fuse from 'fuse.js';
+  import { Search } from 'lucide-svelte';
 
   import { Badge } from '$lib/components/ui/badge';
   import { Card } from '$lib/components/ui/card';
@@ -87,7 +88,21 @@
   function handleStatusChange(value: string) {
     statusFilter = value;
   }
+
+  // Add this function to handle keyboard shortcuts
+  function handleKeydown(event: KeyboardEvent) {
+    // Only trigger if not already focusing an input
+    if (event.key === '/' && document.activeElement?.tagName !== 'INPUT') {
+      event.preventDefault();
+      const searchInput = document.querySelector('input[type="search"]');
+      if (searchInput instanceof HTMLInputElement) {
+        searchInput.focus();
+      }
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <header
   class="relative overflow-hidden bg-gradient-to-br from-[#0A0A1B] to-[#1A1A3A] pb-16 text-white"
@@ -128,12 +143,22 @@
   <div class="container relative mx-auto px-4 py-8">
     <!-- Filters -->
     <div class="mb-8 flex gap-4">
-      <Input
-        type="search"
-        placeholder="Search projects..."
-        class="w-[250px] border-white/10 bg-white/5 text-white placeholder:text-white/50"
-        bind:value={searchQuery}
-      />
+      <div class="relative w-[250px]">
+        <Search
+          class="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-white/50"
+        />
+        <Input
+          type="search"
+          placeholder="Search projects..."
+          class="w-full border-white/10 bg-white/5 pl-8 pr-16 text-white placeholder:text-white/50"
+          bind:value={searchQuery}
+        />
+        <kbd
+          class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 select-none rounded border border-white/20 bg-white/5 px-1.5 font-mono text-[10px] font-medium text-white/50"
+        >
+          /
+        </kbd>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -187,13 +212,23 @@
   <div class="container mx-auto px-4 text-center">
     <p class="flex items-center justify-center gap-2 text-sm text-white/50">
       Made with
-      <a href="https://x.com/LegacyDSL" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://x.com/LegacyDSL"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit LegacyDSL on X (Twitter)"
+      >
         <span
           class="inline-block h-3 w-3 rounded-sm bg-red-500 transition-transform hover:scale-110"
         ></span>
       </a>
       by
-      <a href="https://x.com/LegacyDSL" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://x.com/LegacyDSL"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit LegacyDSL on X (Twitter)"
+      >
         <span
           class="inline-block h-3 w-3 rounded-sm bg-red-500 transition-transform hover:scale-110"
         ></span>
