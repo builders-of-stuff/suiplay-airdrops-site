@@ -6,6 +6,8 @@
   import { Input } from '$lib/components/ui/input';
   import * as Select from '$lib/components/ui/select/index.js';
 
+  import { SUIPLAY_IMAGE_HREF } from '$lib/shared/shared.constant';
+
   // Define the Airdrop type
   type Airdrop = {
     projectName: string;
@@ -88,7 +90,7 @@
 </script>
 
 <header
-  class="relative overflow-hidden bg-gradient-to-br from-[#0A0A1B] to-[#1A1A3A] text-white"
+  class="relative overflow-hidden bg-gradient-to-br from-[#0A0A1B] to-[#1A1A3A] pb-16 text-white"
 >
   <!-- Background effect -->
   <div
@@ -106,29 +108,14 @@
       <p class="mt-4 text-lg text-blue-300/80">From Legacy to the Sui Community</p>
     </div>
 
-    <!-- Stats cards -->
-    <div class="stats relative">
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        {#each [{ label: 'Total Airdrops', value: filteredAirdrops.length }, { label: 'Confirmed', value: filteredAirdrops.filter((a) => a.status === 'confirmed').length }, { label: 'Verified', value: filteredAirdrops.filter((a) => a.communityVerified).length }] as stat}
-          <Card
-            class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
-          >
-            <div class="p-6 text-center">
-              <p class="text-sm font-medium text-blue-300/80">{stat.label}</p>
-              <p
-                class="mt-2 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-4xl font-bold text-transparent"
-              >
-                {stat.value}
-              </p>
-            </div>
-          </Card>
-        {/each}
-      </div>
+    <!-- Animated SuiPlay image -->
+    <div class="relative flex justify-center">
+      <img src={SUIPLAY_IMAGE_HREF} alt="SuiPlay" class="w-48 animate-tilt" />
     </div>
   </div>
 </header>
 
-<main>
+<main class="bg-[#020817]">
   <!-- Background effect continued from header -->
   <div
     class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_50%)]"
@@ -191,3 +178,15 @@
     </div>
   </div>
 </main>
+
+<style>
+  @keyframes tilt {
+    0%,
+    100% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
+</style>
