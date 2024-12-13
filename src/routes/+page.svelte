@@ -100,7 +100,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
       {#each filteredAirdrops as airdrop}
         <Card
           class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
@@ -165,7 +165,7 @@
   </div>
 </main>
 
-<footer class="fixed bottom-0 left-0 right-0 bg-[#020817] py-6">
+<footer class="mt-auto bg-[#020817] py-6">
   <div class="container mx-auto px-4 text-center">
     <p class="flex items-center justify-center gap-2 text-sm text-white/50">
       Made with
