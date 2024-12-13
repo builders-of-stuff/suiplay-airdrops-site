@@ -100,7 +100,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
       {#each filteredAirdrops as airdrop}
         <Card
           class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
