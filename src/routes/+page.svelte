@@ -87,104 +87,107 @@
   }
 </script>
 
-<!-- header -->
-<header class="text-white">
-  <div class="container mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold">SuiPlay0X1 Airdrop Tracker</h1>
-    <p class="mt-4">From Legacy to the Sui Community</p>
-    <div class="stats mt-8">
+<header
+  class="relative overflow-hidden bg-gradient-to-br from-[#0A0A1B] to-[#1A1A3A] text-white"
+>
+  <!-- Background effect -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1),transparent_50%)]"
+  ></div>
+
+  <div class="container relative mx-auto px-4 py-20">
+    <!-- Title section -->
+    <div class="mb-12">
+      <h1
+        class="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-5xl font-bold tracking-tight text-transparent"
+      >
+        SuiPlay0X1 Airdrop Tracker
+      </h1>
+      <p class="mt-4 text-lg text-blue-300/80">From Legacy to the Sui Community</p>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="stats relative">
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Card>
-          <div class="p-4 text-center">
-            <p class="text-sm font-medium text-muted-foreground">Total Airdrops</p>
-            <p class="mt-2 text-3xl font-bold">{filteredAirdrops.length}</p>
-          </div>
-        </Card>
-
-        <Card>
-          <div class="p-4 text-center">
-            <p class="text-sm font-medium text-muted-foreground">Confirmed</p>
-            <p class="mt-2 text-3xl font-bold">
-              {filteredAirdrops.filter((a) => a.status === 'confirmed').length}
-            </p>
-          </div>
-        </Card>
-
-        <Card>
-          <div class="p-4 text-center">
-            <p class="text-sm font-medium text-muted-foreground">Verified</p>
-            <p class="mt-2 text-3xl font-bold">
-              {filteredAirdrops.filter((a) => a.communityVerified).length}
-            </p>
-          </div>
-        </Card>
+        {#each [{ label: 'Total Airdrops', value: filteredAirdrops.length }, { label: 'Confirmed', value: filteredAirdrops.filter((a) => a.status === 'confirmed').length }, { label: 'Verified', value: filteredAirdrops.filter((a) => a.communityVerified).length }] as stat}
+          <Card
+            class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
+          >
+            <div class="p-6 text-center">
+              <p class="text-sm font-medium text-blue-300/80">{stat.label}</p>
+              <p
+                class="mt-2 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-4xl font-bold text-transparent"
+              >
+                {stat.value}
+              </p>
+            </div>
+          </Card>
+        {/each}
       </div>
     </div>
   </div>
 </header>
 
-<main class="container mx-auto py-8">
-  <!-- Filters -->
-  <div class="mb-8 flex gap-4">
-    <Select.Root type="single" value={statusFilter} onValueChange={handleStatusChange}>
-      <Select.Trigger class="w-[180px]">
-        <!-- <Select.Value placeholder="Filter by status" /> -->
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Item value="all">All Status</Select.Item>
-        <Select.Item value="confirmed">Confirmed</Select.Item>
-        <Select.Item value="rumored">Rumored</Select.Item>
-        <Select.Item value="completed">Completed</Select.Item>
-      </Select.Content>
-    </Select.Root>
+<main>
+  <!-- Background effect continued from header -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_50%)]"
+  ></div>
 
-    <Input
-      type="search"
-      placeholder="Search projects..."
-      class="w-[250px]"
-      bind:value={searchQuery}
-    />
-  </div>
+  <div class="container relative mx-auto px-4 py-8">
+    <!-- Filters -->
+    <div class="mb-8 flex gap-4">
+      <Input
+        type="search"
+        placeholder="Search projects..."
+        class="w-[250px] border-white/10 bg-white/5 text-white placeholder:text-white/50"
+        bind:value={searchQuery}
+      />
+    </div>
 
-  <!-- airdrops -->
-  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {#each filteredAirdrops as airdrop}
-      <Card>
-        <div class="p-6">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold">{airdrop.projectName}</h3>
-            <Badge variant={getStatusVariant(airdrop.status)}>
-              {airdrop.status}
-            </Badge>
-          </div>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {#each filteredAirdrops as airdrop}
+        <Card
+          class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-white">{airdrop.projectName}</h3>
+              <Badge variant={getStatusVariant(airdrop.status)}>
+                {airdrop.status}
+              </Badge>
+            </div>
 
-          <div class="mt-4 space-y-2">
-            <p class="text-sm text-gray-600">
-              Token: {airdrop.tokenSymbol}
-            </p>
-            {#if airdrop.amount}
-              <p class="text-sm">Amount: {airdrop.amount}</p>
-            {/if}
-
-            <div class="flex items-center gap-2">
-              {#if airdrop.communityVerified}
-                <Badge variant="outline">Community Verified</Badge>
+            <div class="mt-4 space-y-2">
+              <p class="text-sm text-blue-300/80">
+                Token: {airdrop.tokenSymbol}
+              </p>
+              {#if airdrop.amount}
+                <p class="text-sm text-blue-300/80">Amount: {airdrop.amount}</p>
               {/if}
 
-              {#if airdrop.sourceLink}
-                <a
-                  href={airdrop.sourceLink}
-                  class="text-sm text-blue-500 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Source →
-                </a>
-              {/if}
+              <div class="flex items-center gap-2">
+                {#if airdrop.communityVerified}
+                  <Badge variant="outline" class="border-blue-400/30"
+                    >Community Verified</Badge
+                  >
+                {/if}
+
+                {#if airdrop.sourceLink}
+                  <a
+                    href={airdrop.sourceLink}
+                    class="text-sm text-blue-400 transition-colors hover:text-blue-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source →
+                  </a>
+                {/if}
+              </div>
             </div>
           </div>
-        </div>
-      </Card>
-    {/each}
+        </Card>
+      {/each}
+    </div>
   </div>
 </main>
