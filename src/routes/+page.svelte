@@ -103,9 +103,11 @@
       <h1
         class="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-5xl font-bold tracking-tight text-transparent"
       >
-        SuiPlay0X1 Airdrop Tracker
+        SuiPlay0X1 Airdrop Tracker*
       </h1>
-      <p class="mt-4 text-lg text-blue-300/80">From Legacy to the Sui Community</p>
+      <p class="mt-2 text-sm text-blue-300/60">
+        *List is not definitive and subject to changes
+      </p>
     </div>
 
     <!-- Animated SuiPlay image -->
@@ -117,8 +119,8 @@
   </div>
 </header>
 
-<main class="bg-[#020817]">
-  <!-- Background effect continued from header -->
+<main class="relative bg-[#020817]">
+  <!-- Update the background effect to be relative -->
   <div
     class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_50%)]"
   ></div>
@@ -180,6 +182,25 @@
     </div>
   </div>
 </main>
+
+<footer class="fixed bottom-0 left-0 right-0 bg-[#020817] py-6">
+  <div class="container mx-auto px-4 text-center">
+    <p class="flex items-center justify-center gap-2 text-sm text-white/50">
+      Made with
+      <a href="https://x.com/LegacyDSL" target="_blank" rel="noopener noreferrer">
+        <span
+          class="inline-block h-3 w-3 rounded-sm bg-red-500 transition-transform hover:scale-110"
+        ></span>
+      </a>
+      by
+      <a href="https://x.com/LegacyDSL" target="_blank" rel="noopener noreferrer">
+        <span
+          class="inline-block h-3 w-3 rounded-sm bg-red-500 transition-transform hover:scale-110"
+        ></span>
+      </a>
+    </p>
+  </div>
+</footer>
 
 <style>
   @keyframes tilt {
