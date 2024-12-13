@@ -109,8 +109,10 @@
     </div>
 
     <!-- Animated SuiPlay image -->
-    <div class="relative flex justify-center">
-      <img src={SUIPLAY_IMAGE_HREF} alt="SuiPlay" class="w-48 animate-tilt" />
+    <div
+      class="absolute top-1/4 mx-auto mt-8 opacity-30 md:right-0 md:top-1/2 md:-translate-y-1/2"
+    >
+      <img src={SUIPLAY_IMAGE_HREF} alt="SuiPlay" class="w-[600px] animate-tilt" />
     </div>
   </div>
 </header>
@@ -183,10 +185,10 @@
   @keyframes tilt {
     0%,
     100% {
-      transform: rotate(-10deg);
+      transform: rotate(-5deg);
     }
     50% {
-      transform: rotate(10deg);
+      transform: rotate(5deg);
     }
   }
 </style>
