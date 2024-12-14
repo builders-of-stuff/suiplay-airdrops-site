@@ -1,13 +1,6 @@
 <script lang="ts">
   import Fuse from 'fuse.js';
-  import {
-    Search,
-    Globe2,
-    Twitter,
-    MessageCircle,
-    ChartCandlestick,
-    Coins
-  } from 'lucide-svelte';
+  import { Search, Globe2, ChartCandlestick, Coins } from 'lucide-svelte';
   import XIcon from '$lib/components/icons/x.svelte';
 
   import DslLogo from '$lib/assets/transparent_DSL_Legacy.png';
@@ -16,7 +9,6 @@
   import { Input } from '$lib/components/ui/input';
   import { AIRDROPS, SUIPLAY_URL } from '$lib/shared/shared.constant';
   import { SUIPLAY_IMAGE_HREF } from '$lib/shared/suiplay-image.constant';
-  import { caToBirdeyeUrl } from '$lib/shared/shared.tools';
 
   let searchQuery = $state('');
 
@@ -114,6 +106,11 @@
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <!-- Airdrop -->
       {#each filteredAirdrops as airdrop}
+        {@const isOfficial = airdrop.isOfficial}
+        <!-- {@const isCommunity = airdrop.isCommunity} -->
+        {@const badgeVariant = isOfficial ? 'default' : 'outline'}
+        {@const badgeText = isOfficial ? 'Official' : 'Community'}
+
         <Card
           class="overflow-hidden border-white/10 bg-gradient-to-br from-white/5 to-white/10 shadow-lg shadow-blue-500/5 backdrop-blur-sm transition-all hover:border-blue-500/20 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/15"
         >
@@ -143,9 +140,13 @@
                       href={airdrop.confirmationSource}
                       target="_blank"
                       rel="noopener noreferrer"
+                      class="group"
                     >
-                      <Badge variant={airdrop.isConfirmed ? 'default' : 'outline'}>
-                        {airdrop.isConfirmed ? 'Confirmed' : 'Rumoured'}
+                      <Badge
+                        variant={badgeVariant}
+                        class="transition-colors group-hover:text-blue-400"
+                      >
+                        {badgeText}
                       </Badge>
                     </a>
                   </div>

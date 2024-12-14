@@ -4,6 +4,7 @@ import FUD from '$lib/assets/fud.png';
 import Aftermath from '$lib/assets/aftermath.webp';
 import Scallop from '$lib/assets/scallop.png';
 import Pebble from '$lib/assets/pebble.svg';
+import Lemon from '$lib/assets/lemon.png';
 
 export const SUIPLAY_URL = `https://www.suiplay0x1.com/`;
 
@@ -16,7 +17,7 @@ export const AIRDROPS = [
     birdeyeLink:
       'https://www.birdeye.so/token/0x76cb819b01abed502bee8a702b4c2d547532c12f25001c9dea795a5e631c26f1::fud::FUD?chain=sui',
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
-    isConfirmed: true,
+    isOfficial: true,
     estimatedAmount: ''
   },
   {
@@ -26,7 +27,7 @@ export const AIRDROPS = [
     x: 'https://x.com/AftermathFi',
     birdeyeLink: '',
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
-    isConfirmed: true,
+    isOfficial: true,
     estimatedAmount: ''
   },
   {
@@ -37,7 +38,7 @@ export const AIRDROPS = [
     x: 'https://x.com/Scallop_io',
     birdeyeLink:
       'https://www.birdeye.so/token/0x7016aae72cfc67f2fadf55769c0a7dd54291a583b63051a5ed71081cce836ac6::sca::SCA?chain=sui',
-    isConfirmed: true,
+    isOfficial: true,
     estimatedAmount: ''
   },
   {
@@ -48,7 +49,7 @@ export const AIRDROPS = [
     x: 'https://x.com/SUDENG_HIPPO',
     birdeyeLink:
       'https://www.birdeye.so/token/0x8993129d72e733985f7f1a00396cbd055bad6f817fee36576ce483c8bbb8b87b::sudeng::SUDENG?chain=sui',
-    isConfirmed: true,
+    isOfficial: true,
     estimatedAmount: ''
   },
   {
@@ -58,7 +59,7 @@ export const AIRDROPS = [
     website: 'https://home.panzerdogs.io/',
     x: 'https://x.com/panzerdogs',
     birdeyeLink: '',
-    isConfirmed: true,
+    isOfficial: true,
     estimatedAmount: ''
   },
   {
@@ -68,7 +69,21 @@ export const AIRDROPS = [
     website: 'https://www.pebblestream.io/',
     x: '',
     birdeyeLink: '',
-    isConfirmed: true,
+    isOfficial: true,
+    estimatedAmount: ''
+  },
+  // Community
+  {
+    name: 'Lemmon',
+    icon: Lemon,
+    confirmationSource:
+      'https://x.com/LemonsOfSui/status/1868062833013150185?t=2E_szeATBMpwh2zWdKvCqQ&s=19',
+    website: 'https://lemonsofsui.com/',
+    x: 'https://x.com/LemonsOfSui',
+    birdeyeLink:
+      'https://www.birdeye.so/token/0xb6618debe65795bf0ecd5373eec3ab74d38e26742c1b0817c8b00896d2cb7150::lemon::LEMON?chain=sui',
+    isOfficial: false,
+    isCommunity: true,
     estimatedAmount: ''
   }
 ];
