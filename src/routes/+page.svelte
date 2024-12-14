@@ -117,7 +117,7 @@
                   <img
                     src={airdrop.icon || '/default-icon.png'}
                     alt={`${airdrop.name} icon`}
-                    class="h-full w-full object-contain"
+                    class="h-full w-full rounded-full object-contain"
                   />
                 </a>
               </div>
