@@ -151,7 +151,7 @@
                   </div>
 
                   <!-- Icons -->
-                  <div class="mt-4 flex items-center gap-4 rounded-md p-1">
+                  <div class="mt-2 flex items-center gap-3 rounded-md p-1">
                     <a
                       href={airdrop.website}
                       target="_blank"
