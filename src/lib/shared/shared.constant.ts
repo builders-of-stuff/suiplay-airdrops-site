@@ -24,8 +24,7 @@ export const AIRDROPS = [
     icon: Aftermath,
     website: 'https://aftermath.finance/',
     x: 'https://x.com/AftermathFi',
-    birdeyeLink:
-      'https://www.birdeye.so/token/0x76cb819b01abed502bee8a702b4c2d547532c12f25001c9dea795a5e631c26f1::fud::FUD?chain=sui',
+    birdeyeLink: '',
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
     isConfirmed: true,
     estimatedAmount: ''
