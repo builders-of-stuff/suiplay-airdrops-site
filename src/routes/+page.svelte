@@ -1,6 +1,6 @@
 <script lang="ts">
   import Fuse from 'fuse.js';
-  import { Search } from 'lucide-svelte';
+  import { Search, Globe2, Twitter, MessageCircle, BookOpen } from 'lucide-svelte';
 
   import { Badge } from '$lib/components/ui/badge';
   import { Card } from '$lib/components/ui/card';
@@ -145,14 +145,46 @@
                     </a>
                   </div>
 
-                  <div class="mt-2">
+                  <div class="mt-2 flex gap-2">
                     <a
                       href={airdrop.projectLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-sm text-blue-300/80 hover:text-blue-400"
+                      class="text-blue-300/80 hover:text-blue-400"
+                      title="Visit website"
+                      aria-label={`Visit ${airdrop.name}'s website`}
                     >
-                      Website →
+                      <Globe2 class="h-4 w-4" />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-300/80 hover:text-blue-400"
+                      title="Follow on X (Twitter)"
+                      aria-label={`Follow ${airdrop.name} on X (Twitter)`}
+                    >
+                      <Twitter class="h-4 w-4" />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-300/80 hover:text-blue-400"
+                      title="Join community"
+                      aria-label={`Join ${airdrop.name}'s community chat`}
+                    >
+                      <MessageCircle class="h-4 w-4" />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-300/80 hover:text-blue-400"
+                      title="Read documentation"
+                      aria-label={`Read ${airdrop.name}'s documentation`}
+                    >
+                      <BookOpen class="h-4 w-4" />
                     </a>
                   </div>
                 </div>
