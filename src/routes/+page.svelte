@@ -211,7 +211,7 @@
 </main>
 
 <!-- Footer -->
-<footer class="mt-auto bg-[#FF0000] py-6">
+<footer class="mt-24 mt-auto bg-[#FF0000] py-6">
   <div class="container mx-auto px-4 text-center">
     <p class="flex items-center justify-center gap-2 font-medium text-white">
       Brought to you by
