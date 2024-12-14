@@ -8,7 +8,8 @@ export const AIRDROPS = [
     isConfirmed: true,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://fudthepug.com/',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -17,7 +18,8 @@ export const AIRDROPS = [
     isConfirmed: false,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -26,7 +28,8 @@ export const AIRDROPS = [
     isConfirmed: false,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -35,7 +38,8 @@ export const AIRDROPS = [
     isConfirmed: false,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -44,7 +48,8 @@ export const AIRDROPS = [
     isConfirmed: false,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -53,7 +58,8 @@ export const AIRDROPS = [
     isConfirmed: true,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -62,7 +68,8 @@ export const AIRDROPS = [
     isConfirmed: true,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -71,7 +78,8 @@ export const AIRDROPS = [
     isConfirmed: true,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 1',
@@ -80,7 +88,8 @@ export const AIRDROPS = [
     isConfirmed: true,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   },
   {
     name: 'Sample Project 2',
@@ -89,6 +98,7 @@ export const AIRDROPS = [
     isConfirmed: false,
     source: 'https://x.com/fudthepug',
     projectLink: 'https://example2.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg'
+    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    estimatedAmount: '1%'
   }
 ];

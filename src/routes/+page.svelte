@@ -1,6 +1,13 @@
 <script lang="ts">
   import Fuse from 'fuse.js';
-  import { Search, Globe2, Twitter, MessageCircle, BookOpen } from 'lucide-svelte';
+  import {
+    Search,
+    Globe2,
+    Twitter,
+    MessageCircle,
+    BookOpen,
+    Coins
+  } from 'lucide-svelte';
 
   import DslLogo from '$lib/assets/transparent_DSL_Legacy.png';
   import { Badge } from '$lib/components/ui/badge';
@@ -186,6 +193,14 @@
                       aria-label={`Read ${airdrop.name}'s documentation`}
                     >
                       <BookOpen class="h-4 w-4" />
+                    </a>
+                    <a
+                      href="#"
+                      class="text-blue-300/80 hover:text-blue-400"
+                      title={`Estimated airdrop: ${airdrop.estimatedAmount || 'TBA'}`}
+                      aria-label={`Estimated airdrop amount for ${airdrop.name}`}
+                    >
+                      <Coins class="h-4 w-4" />
                     </a>
                   </div>
                 </div>
