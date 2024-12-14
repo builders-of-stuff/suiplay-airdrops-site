@@ -13,7 +13,7 @@
   import { Badge } from '$lib/components/ui/badge';
   import { Card } from '$lib/components/ui/card';
   import { Input } from '$lib/components/ui/input';
-  import { AIRDROPS } from '$lib/shared/shared.constant';
+  import { AIRDROPS, SUIPLAY_URL } from '$lib/shared/shared.constant';
   import { SUIPLAY_IMAGE_HREF } from '$lib/shared/suiplay-image.constant';
   import { caToBirdeyeUrl } from '$lib/shared/shared.tools';
 
@@ -74,9 +74,11 @@
 
     <!-- Animated SuiPlay image -->
     <div
-      class="absolute top-1/4 mx-auto mt-8 opacity-30 md:right-0 md:top-1/2 md:-translate-y-1/2"
+      class="absolute top-1/4 mx-auto mt-8 opacity-30 md:right-0 md:top-1/2 md:-translate-y-1/2 lg:opacity-80"
     >
-      <img src={SUIPLAY_IMAGE_HREF} alt="SuiPlay" class="w-[600px] animate-tilt" />
+      <a href={SUIPLAY_URL} target="_blank" rel="noopener noreferrer">
+        <img src={SUIPLAY_IMAGE_HREF} alt="SuiPlay" class="w-[600px] animate-tilt" />
+      </a>
     </div>
   </div>
 </header>
@@ -109,6 +111,7 @@
     </div>
 
     <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+      <!-- Airdrop -->
       {#each filteredAirdrops as airdrop}
         <Card
           class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
@@ -138,7 +141,7 @@
                       class="text-xl font-bold text-white transition-colors hover:text-blue-400"
                     >
                       <a
-                        href={airdrop.projectLink}
+                        href={airdrop.website}
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:text-blue-400"
@@ -146,7 +149,11 @@
                         {airdrop.name}
                       </a>
                     </h3>
-                    <a href={airdrop.source} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={airdrop.confirmationSource}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Badge variant={airdrop.isConfirmed ? 'default' : 'outline'}>
                         {airdrop.isConfirmed ? 'Confirmed' : 'Rumoured'}
                       </Badge>
@@ -155,7 +162,7 @@
 
                   <div class="mt-2 flex gap-2">
                     <a
-                      href={airdrop.projectLink}
+                      href={airdrop.website}
                       target="_blank"
                       rel="noopener noreferrer"
                       class="text-blue-300/80 hover:text-blue-400"
@@ -213,6 +220,7 @@
   </div>
 </main>
 
+<!-- Footer -->
 <footer class="mt-auto bg-[#FF0000] py-6">
   <div class="container mx-auto px-4 text-center">
     <p class="flex items-center justify-center gap-2 font-medium text-white">

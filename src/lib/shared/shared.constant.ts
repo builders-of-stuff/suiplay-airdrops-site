@@ -1,104 +1,66 @@
+import Hippo from '$lib/assets/hippo.png';
+import Panzerdogs from '$lib/assets/panzerdogs.png';
+import FUD from '$lib/assets/fud.png';
+import Aftermath from '$lib/assets/aftermath.webp';
+import Scallop from '$lib/assets/scallop.png';
+import Pebble from '$lib/assets/pebble.svg';
+
+export const SUIPLAY_URL = `https://www.suiplay0x1.com/`;
+
 export const AIRDROPS = [
   {
     name: 'FUD',
-    ticker: 'FUD',
+    icon: FUD,
+    website: 'https://fudthepug.com/',
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
     contractAddress:
       '0x5fbad0d3ba9a2fcc7beed9dd3863c75ebda27e7c419fd88d31d4541ed7cb9b57::fud::FUD',
-
     isConfirmed: true,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://fudthepug.com/',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
     estimatedAmount: '1%'
   },
   {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
-    contractAddress: '0x1234...5678',
-    isConfirmed: false,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
-    estimatedAmount: '1%'
-  },
-  {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
-    contractAddress: '0x1234...5678',
-    isConfirmed: false,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
-    estimatedAmount: '1%'
-  },
-  {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
-    contractAddress: '0x1234...5678',
-    isConfirmed: false,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
-    estimatedAmount: '1%'
-  },
-  {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
-    contractAddress: '0x1234...5678',
-    isConfirmed: false,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
-    estimatedAmount: '1%'
-  },
-  {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
+    name: 'Aftermath',
+    icon: Aftermath,
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
+    website: 'https://aftermath.finance/',
     contractAddress: '0x1234...5678',
     isConfirmed: true,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
     estimatedAmount: '1%'
   },
   {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
+    name: 'Scallop',
+    icon: Scallop,
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
+    website: 'https://www.scallop.io/',
     contractAddress: '0x1234...5678',
     isConfirmed: true,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
     estimatedAmount: '1%'
   },
   {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
+    name: 'Hippo',
+    icon: Hippo,
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
+    website: 'https://x.com/SUDENG_HIPPO',
     contractAddress: '0x1234...5678',
     isConfirmed: true,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
     estimatedAmount: '1%'
   },
   {
-    name: 'Sample Project 1',
-    ticker: 'SAMPLE1',
+    name: 'Panzerdogs',
+    icon: Panzerdogs,
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
+    website: 'https://home.panzerdogs.io/',
     contractAddress: '0x1234...5678',
     isConfirmed: true,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
     estimatedAmount: '1%'
   },
   {
-    name: 'Sample Project 2',
-    ticker: 'SAMPLE2',
-    contractAddress: '0x8765...4321',
-    isConfirmed: false,
-    source: 'https://x.com/fudthepug',
-    projectLink: 'https://example2.com',
-    icon: 'https://pbs.twimg.com/profile_images/1733951343683858432/6tSAcUet_400x400.jpg',
+    name: 'Pebble',
+    icon: Pebble,
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
+    website: 'https://www.pebblestream.io/',
+    contractAddress: '0x1234...5678',
+    isConfirmed: true,
     estimatedAmount: '1%'
   }
 ];
