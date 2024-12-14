@@ -12,55 +12,64 @@ export const AIRDROPS = [
     name: 'FUD',
     icon: FUD,
     website: 'https://fudthepug.com/',
+    x: 'https://x.com/fudthepug',
+    birdeyeLink:
+      'https://www.birdeye.so/token/0x76cb819b01abed502bee8a702b4c2d547532c12f25001c9dea795a5e631c26f1::fud::FUD?chain=sui',
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
-    contractAddress:
-      '0x5fbad0d3ba9a2fcc7beed9dd3863c75ebda27e7c419fd88d31d4541ed7cb9b57::fud::FUD',
     isConfirmed: true,
-    estimatedAmount: '1%'
+    estimatedAmount: ''
   },
   {
     name: 'Aftermath',
     icon: Aftermath,
-    confirmationSource: 'https://www.suiplay0x1.com/rewards',
     website: 'https://aftermath.finance/',
-    contractAddress: '0x1234...5678',
+    x: 'https://x.com/AftermathFi',
+    birdeyeLink:
+      'https://www.birdeye.so/token/0x76cb819b01abed502bee8a702b4c2d547532c12f25001c9dea795a5e631c26f1::fud::FUD?chain=sui',
+    confirmationSource: 'https://www.suiplay0x1.com/rewards',
     isConfirmed: true,
-    estimatedAmount: '1%'
+    estimatedAmount: ''
   },
   {
     name: 'Scallop',
     icon: Scallop,
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
     website: 'https://www.scallop.io/',
-    contractAddress: '0x1234...5678',
+    x: 'https://x.com/Scallop_io',
+    birdeyeLink:
+      'https://www.birdeye.so/token/0x7016aae72cfc67f2fadf55769c0a7dd54291a583b63051a5ed71081cce836ac6::sca::SCA?chain=sui',
     isConfirmed: true,
-    estimatedAmount: '1%'
+    estimatedAmount: ''
   },
   {
     name: 'Hippo',
     icon: Hippo,
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
     website: 'https://x.com/SUDENG_HIPPO',
-    contractAddress: '0x1234...5678',
+    x: 'https://x.com/SUDENG_HIPPO',
+    birdeyeLink:
+      'https://www.birdeye.so/token/0x8993129d72e733985f7f1a00396cbd055bad6f817fee36576ce483c8bbb8b87b::sudeng::SUDENG?chain=sui',
     isConfirmed: true,
-    estimatedAmount: '1%'
+    estimatedAmount: ''
   },
   {
     name: 'Panzerdogs',
     icon: Panzerdogs,
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
     website: 'https://home.panzerdogs.io/',
-    contractAddress: '0x1234...5678',
+    x: 'https://x.com/panzerdogs',
+    birdeyeLink: '',
     isConfirmed: true,
-    estimatedAmount: '1%'
+    estimatedAmount: ''
   },
   {
     name: 'Pebble',
     icon: Pebble,
     confirmationSource: 'https://www.suiplay0x1.com/rewards',
     website: 'https://www.pebblestream.io/',
-    contractAddress: '0x1234...5678',
+    x: '',
+    birdeyeLink: '',
     isConfirmed: true,
-    estimatedAmount: '1%'
+    estimatedAmount: ''
   }
 ];

@@ -5,9 +5,10 @@
     Globe2,
     Twitter,
     MessageCircle,
-    BookOpen,
+    ChartCandlestick,
     Coins
   } from 'lucide-svelte';
+  import XIcon from '$lib/components/icons/x.svelte';
 
   import DslLogo from '$lib/assets/transparent_DSL_Legacy.png';
   import { Badge } from '$lib/components/ui/badge';
@@ -120,35 +121,18 @@
             <div class="flex items-center gap-4">
               <!-- Project Icon -->
               <div class="h-12 w-12 flex-shrink-0 rounded-full bg-white/10 p-2">
-                <a
-                  href={caToBirdeyeUrl(airdrop.contractAddress)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={airdrop.icon || '/default-icon.png'}
-                    alt={`${airdrop.name} icon`}
-                    class="h-full w-full rounded-full object-contain"
-                  />
-                </a>
+                <img
+                  src={airdrop.icon || '/default-icon.png'}
+                  alt={`${airdrop.name} icon`}
+                  class="h-full w-full rounded-full object-contain"
+                />
               </div>
 
               <div class="flex-1">
                 <!-- Project Info -->
                 <div class="group">
                   <div class="flex items-center justify-between">
-                    <h3
-                      class="text-xl font-bold text-white transition-colors hover:text-blue-400"
-                    >
-                      <a
-                        href={airdrop.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-blue-400"
-                      >
-                        {airdrop.name}
-                      </a>
-                    </h3>
+                    <h3 class="text-xl font-bold text-white">{airdrop.name}</h3>
                     <a
                       href={airdrop.confirmationSource}
                       target="_blank"
@@ -171,44 +155,43 @@
                     >
                       <Globe2 class="h-4 w-4" />
                     </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-blue-300/80 hover:text-blue-400"
-                      title="Follow on X (Twitter)"
-                      aria-label={`Follow ${airdrop.name} on X (Twitter)`}
-                    >
-                      <Twitter class="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-blue-300/80 hover:text-blue-400"
-                      title="Join community"
-                      aria-label={`Join ${airdrop.name}'s community chat`}
-                    >
-                      <MessageCircle class="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-blue-300/80 hover:text-blue-400"
-                      title="Read documentation"
-                      aria-label={`Read ${airdrop.name}'s documentation`}
-                    >
-                      <BookOpen class="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      class="text-blue-300/80 hover:text-blue-400"
-                      title={`Estimated airdrop: ${airdrop.estimatedAmount || 'TBA'}`}
-                      aria-label={`Estimated airdrop amount for ${airdrop.name}`}
-                    >
-                      <Coins class="h-4 w-4" />
-                    </a>
+
+                    {#if airdrop.x}
+                      <a
+                        href={airdrop.x}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-300/80 hover:text-blue-400"
+                        title="Follow on X (Twitter)"
+                        aria-label={`Follow ${airdrop.name} on X (Twitter)`}
+                      >
+                        <XIcon class="h-4 w-4" />
+                      </a>
+                    {/if}
+
+                    {#if airdrop.birdeyeLink}
+                      <a
+                        href={airdrop.birdeyeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-300/80 hover:text-blue-400"
+                        title="Read documentation"
+                        aria-label={`Read ${airdrop.name}'s documentation`}
+                      >
+                        <ChartCandlestick class="h-4 w-4" />
+                      </a>
+                    {/if}
+
+                    {#if airdrop.estimatedAmount}
+                      <a
+                        href="#"
+                        class="text-blue-300/80 hover:text-blue-400"
+                        title={`Estimated airdrop: ${airdrop.estimatedAmount || 'TBA'}`}
+                        aria-label={`Estimated airdrop amount for ${airdrop.name}`}
+                      >
+                        <Coins class="h-4 w-4" />
+                      </a>
+                    {/if}
                   </div>
                 </div>
               </div>
