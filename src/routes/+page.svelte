@@ -111,16 +111,18 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <!-- Airdrop -->
       {#each filteredAirdrops as airdrop}
         <Card
-          class="overflow-hidden border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
+          class="overflow-hidden border-white/10 bg-gradient-to-br from-white/5 to-white/10 shadow-lg shadow-blue-500/5 backdrop-blur-sm transition-all hover:border-blue-500/20 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/15"
         >
-          <div class="p-6">
-            <div class="flex items-center gap-4">
+          <div class="space-y-6 p-8">
+            <div class="flex items-center gap-6">
               <!-- Project Icon -->
-              <div class="h-12 w-12 flex-shrink-0 rounded-full bg-white/10 p-2">
+              <div
+                class="h-16 w-16 flex-shrink-0 rounded-full bg-gradient-to-br from-white/15 to-white/5 p-2 ring-1 ring-white/20"
+              >
                 <img
                   src={airdrop.icon || '/default-icon.png'}
                   alt={`${airdrop.name} icon`}
@@ -132,7 +134,11 @@
                 <!-- Project Info -->
                 <div class="group">
                   <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-bold text-white">{airdrop.name}</h3>
+                    <h3
+                      class="bg-gradient-to-r from-white to-white/80 bg-clip-text text-2xl font-bold text-transparent"
+                    >
+                      {airdrop.name}
+                    </h3>
                     <a
                       href={airdrop.confirmationSource}
                       target="_blank"
@@ -144,7 +150,8 @@
                     </a>
                   </div>
 
-                  <div class="mt-2 flex gap-2">
+                  <!-- Icons -->
+                  <div class="mt-4 flex items-center gap-4 rounded-md p-1">
                     <a
                       href={airdrop.website}
                       target="_blank"
@@ -153,7 +160,7 @@
                       title="Visit website"
                       aria-label={`Visit ${airdrop.name}'s website`}
                     >
-                      <Globe2 class="h-4 w-4" />
+                      <Globe2 class="h-5 w-5" />
                     </a>
 
                     {#if airdrop.x}
@@ -165,7 +172,7 @@
                         title="Follow on X (Twitter)"
                         aria-label={`Follow ${airdrop.name} on X (Twitter)`}
                       >
-                        <XIcon class="h-4 w-4" />
+                        <XIcon class="h-5 w-5" />
                       </a>
                     {/if}
 
@@ -178,7 +185,7 @@
                         title="Read documentation"
                         aria-label={`Read ${airdrop.name}'s documentation`}
                       >
-                        <ChartCandlestick class="h-4 w-4" />
+                        <ChartCandlestick class="h-5 w-5" />
                       </a>
                     {/if}
 
@@ -189,7 +196,7 @@
                         title={`Estimated airdrop: ${airdrop.estimatedAmount || 'TBA'}`}
                         aria-label={`Estimated airdrop amount for ${airdrop.name}`}
                       >
-                        <Coins class="h-4 w-4" />
+                        <Coins class="h-5 w-5" />
                       </a>
                     {/if}
                   </div>
