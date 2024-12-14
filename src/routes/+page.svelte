@@ -2,6 +2,7 @@
   import Fuse from 'fuse.js';
   import { Search, Globe2, Twitter, MessageCircle, BookOpen } from 'lucide-svelte';
 
+  import DslLogo from '$lib/assets/transparent_DSL_Legacy.png';
   import { Badge } from '$lib/components/ui/badge';
   import { Card } from '$lib/components/ui/card';
   import { Input } from '$lib/components/ui/input';
@@ -197,30 +198,18 @@
   </div>
 </main>
 
-<footer class="mt-auto bg-[#020817] py-6">
+<footer class="mt-auto bg-[#FF0000] py-6">
   <div class="container mx-auto px-4 text-center">
-    <p class="flex items-center justify-center gap-2 text-sm text-white/50">
-      Made with
+    <p class="flex items-center justify-center gap-2 font-medium text-white">
+      Brought to you by
       <a
         href="https://x.com/LegacyDSL"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visit LegacyDSL on X (Twitter)"
+        class="flex items-center font-bold transition-opacity hover:opacity-80"
+        aria-label="Visit Legacy on X (Twitter)"
       >
-        <span
-          class="inline-block h-3 w-3 rounded-sm bg-red-500 transition-transform hover:scale-110"
-        ></span>
-      </a>
-      by
-      <a
-        href="https://x.com/LegacyDSL"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit LegacyDSL on X (Twitter)"
-      >
-        <span
-          class="inline-block h-3 w-3 rounded-sm bg-red-500 transition-transform hover:scale-110"
-        ></span>
+        <img src={DslLogo} alt="DSL Logo" class="h-6 w-6" />
       </a>
     </p>
   </div>
