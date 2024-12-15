@@ -242,9 +242,9 @@
 </main>
 
 <!-- Footer -->
-<footer class="mt-24 bg-[#FF0000] py-6">
+<footer class="mt-24 bg-[#FF0000] py-1.5">
   <div class="container mx-auto px-4 text-center">
-    <p class="flex items-center justify-center gap-2 font-medium text-white">
+    <p class="flex items-center justify-center gap-1.5 text-sm font-medium text-white">
       Brought to you by
       <a
         href="https://x.com/LegacyDSL"
@@ -253,7 +253,7 @@
         class="flex items-center font-bold transition-opacity hover:opacity-80"
         aria-label="Visit Legacy on X (Twitter)"
       >
-        <img src={DslLogo} alt="DSL Logo" class="h-6 w-6" />
+        <img src={DslLogo} alt="DSL Logo" class="h-4 w-4" />
       </a>
     </p>
   </div>
