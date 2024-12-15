@@ -13,7 +13,7 @@ export const TREASURY_WALLET_URL = `https://suivision.xyz/account/@suiplayreward
 
 export const AIRDROPS = [
   {
-    name: 'FUD',
+    name: 'Fud',
     icon: FUD,
     website: 'https://fudthepug.com/',
     x: 'https://x.com/fudthepug',
