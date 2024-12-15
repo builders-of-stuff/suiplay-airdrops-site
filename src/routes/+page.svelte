@@ -144,7 +144,7 @@
                     >
                       <Badge
                         variant={badgeVariant}
-                        class="transition-colors group-hover:text-blue-400"
+                        class="transition-colors hover:text-blue-400"
                       >
                         {badgeText}
                       </Badge>
@@ -190,7 +190,7 @@
                       </a>
                     {/if}
 
-                    {#if airdrop.estimatedAmount}
+                    <!-- {#if airdrop.estimatedAmount}
                       <a
                         href="#"
                         class="text-blue-300/80 hover:text-blue-400"
@@ -199,7 +199,7 @@
                       >
                         <Coins class="h-5 w-5" />
                       </a>
-                    {/if}
+                    {/if} -->
                   </div>
                 </div>
               </div>

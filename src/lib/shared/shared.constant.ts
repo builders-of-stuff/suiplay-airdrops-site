@@ -5,6 +5,7 @@ import Aftermath from '$lib/assets/aftermath.webp';
 import Scallop from '$lib/assets/scallop.png';
 import Pebble from '$lib/assets/pebble.svg';
 import Lemon from '$lib/assets/lemon.png';
+import Pugwifhat from '$lib/assets/pugwifhat.webp';
 
 export const SUIPLAY_URL = `https://www.suiplay0x1.com/`;
 
@@ -73,6 +74,18 @@ export const AIRDROPS = [
     estimatedAmount: ''
   },
   // Community
+  {
+    name: 'PUGWIFHAT',
+    icon: Pugwifhat,
+    confirmationSource: 'https://x.com/SuiPugwif',
+    website: 'https://pugwifsui.com/',
+    x: 'https://x.com/SuiPugwif',
+    birdeyeLink:
+      'https://www.birdeye.so/token/0x2cd6f14a4b64c3a0fa9c644e8ed88d9c91d789a071886d67d24e6b435147063d::pugwif::PUGWIF?chain=sui',
+    isOfficial: false,
+    isCommunity: true,
+    estimatedAmount: ''
+  },
   {
     name: 'Lemmon',
     icon: Lemon,
