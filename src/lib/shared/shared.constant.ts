@@ -77,7 +77,7 @@ export const AIRDROPS = [
   {
     name: 'PUGWIFHAT',
     icon: Pugwifhat,
-    confirmationSource: 'https://x.com/SuiPugwif',
+    confirmationSource: 'https://suivision.xyz/account/@suiplayrewards',
     website: 'https://pugwifsui.com/',
     x: 'https://x.com/SuiPugwif',
     birdeyeLink:
@@ -89,8 +89,7 @@ export const AIRDROPS = [
   {
     name: 'Lemmon',
     icon: Lemon,
-    confirmationSource:
-      'https://x.com/LemonsOfSui/status/1868062833013150185?t=2E_szeATBMpwh2zWdKvCqQ&s=19',
+    confirmationSource: 'https://suivision.xyz/account/@suiplayrewards',
     website: 'https://lemonsofsui.com/',
     x: 'https://x.com/LemonsOfSui',
     birdeyeLink:
