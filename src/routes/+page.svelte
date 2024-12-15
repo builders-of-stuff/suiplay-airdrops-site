@@ -128,10 +128,12 @@
 
     <div class="container relative mx-auto px-4 py-8">
       <!-- Filters -->
-      <div class="mb-8 flex items-center justify-between">
-        <div class="flex items-center gap-4">
+      <div
+        class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
           <!-- Search Bar -->
-          <div class="relative w-[250px]">
+          <div class="relative w-full sm:w-[250px]">
             <Search
               class="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-white/50"
             />
@@ -152,8 +154,9 @@
           <Tabs.Root
             value={activeCategory}
             onValueChange={(value) => (activeCategory = value)}
+            class="w-full sm:w-[300px]"
           >
-            <Tabs.List class="grid w-[300px] grid-cols-3">
+            <Tabs.List class="grid w-full grid-cols-3">
               <Tabs.Trigger value="all">All</Tabs.Trigger>
               <Tabs.Trigger value="official">Official</Tabs.Trigger>
               <Tabs.Trigger value="community">Community</Tabs.Trigger>
@@ -166,7 +169,7 @@
           href={TREASURY_WALLET_URL}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600"
+          class="flex w-full items-center justify-center gap-2 rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 sm:w-auto"
         >
           <CoinsIcon class="h-4 w-4" />
           Community wallet
