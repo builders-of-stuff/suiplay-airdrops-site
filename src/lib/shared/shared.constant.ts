@@ -77,7 +77,7 @@ export const AIRDROPS = [
   },
   // Community
   {
-    name: 'PUGWIFHAT',
+    name: 'Pugwifhat',
     icon: Pugwifhat,
     confirmationSource: TREASURY_WALLET_URL,
     website: 'https://pugwifsui.com/',
@@ -89,7 +89,7 @@ export const AIRDROPS = [
     estimatedAmount: ''
   },
   {
-    name: 'Lemmon',
+    name: 'Lemon',
     icon: Lemon,
     confirmationSource: TREASURY_WALLET_URL,
     website: 'https://lemonsofsui.com/',
