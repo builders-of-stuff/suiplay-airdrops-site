@@ -44,6 +44,36 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
+<svelte:head>
+  <!-- Basic Meta Tags -->
+  <title>SuiPlay0X1 Airdrop Tracker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Track airdrops for the SuiPlay0X1" />
+
+  <!-- Search Engine Meta Tags -->
+  <meta name="robots" content="index,follow" />
+  <meta
+    name="keywords"
+    content="SuiPlay, Sui, Sui airdrop, 0X1, web3, gaming, SuiPlay0X1"
+  />
+
+  <!-- Open Graph Meta Tags (for social sharing) -->
+  <meta property="og:title" content="SuiPlay0X1 Airdrop Tracker" />
+  <meta property="og:description" content="Track airdrops for the SuiPlay0X1" />
+  <meta property="og:image" content={'https://x.com/SuiPlay/header_photo'} />
+  <meta property="og:url" content="https://suiplay0x1.com" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SuiPlay0X1 Airdrop Tracker" />
+  <meta name="twitter:description" content="Track airdrops for the SuiPlay0X1" />
+  <meta name="twitter:image" content={'https://x.com/SuiPlay/header_photo'} />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" />
+</svelte:head>
+
 <header
   class="relative overflow-hidden bg-gradient-to-br from-[#0A0A1B] to-[#1A1A3A] pb-16 text-white"
 >
