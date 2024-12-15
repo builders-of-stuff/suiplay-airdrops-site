@@ -62,7 +62,7 @@
   <meta property="og:title" content="SuiPlay0X1 Airdrop Tracker" />
   <meta property="og:description" content="Track airdrops for the SuiPlay0X1" />
   <meta property="og:image" content={'https://x.com/SuiPlay/header_photo'} />
-  <meta property="og:url" content="https://suiplay0x1.com" />
+  <meta property="og:url" content="https://suiplayrewards.xyz" />
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
